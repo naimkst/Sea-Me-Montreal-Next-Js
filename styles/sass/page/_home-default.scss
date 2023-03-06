@@ -70,6 +70,75 @@
 }
 
 
+// menu-tabs
+
+.menu-tabs {
+    display: none;
+
+    &.show {
+        display: block;
+    }
+
+    .menu-info {
+        margin-top: 30px;
+
+
+        .MuiBox-root {
+            padding: 0;
+        }
+
+        .MuiTabs-flexContainer {
+            justify-content: center;
+
+            button {
+                color: $white;
+                border: 1px solid $white;
+                width: 249px;
+                height: 76px;
+                border-radius: 5px;
+                margin: 0 15px;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 21px;
+                line-height: 25px;
+                text-transform: capitalize;
+                outline: none;
+
+                @media(max-width:991px) {
+                    width: 80px;
+                    height: 30px;
+                    margin: 0 5px;
+                    font-size: 14px;
+                }
+
+                @media(max-width:575px) {
+                    margin: 0 5px;
+                    font-size: 14px;
+                    min-width: 75px;
+                    position: relative;
+                    min-height: 38px;
+                }
+
+                &.Mui-selected {
+                    background: $theme-primary-color;
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
+        }
+
+        .MuiTabs-indicator {
+            display: none;
+        }
+
+        .MuiBox-root {
+            margin-top: 40px;
+        }
+    }
+}
+
+
 // menu-section
 
 .menu-section {
@@ -191,6 +260,72 @@
                 }
             }
         }
+    }
+
+    .MuiBox-root {
+        padding: 0;
+    }
+
+    .MuiTabs-flexContainer {
+        justify-content: flex-start;
+
+        button {
+            color: $black;
+            border: 1px solid $black;
+            width: 153.67px;
+            height: 60px;
+            border-radius: 5px;
+            margin: 0 10px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 21px;
+            line-height: 25px;
+            text-transform: capitalize;
+            outline: none;
+
+            @media(max-width:1399px) {
+                width: 140.67px;
+            }
+
+            @media(max-width:1199px) {
+                width: 120.67px;
+                height: 50px;
+                border-radius: 5px;
+                margin: 0 5px;
+            }
+
+            @media(max-width:991px) {
+                width: 80px;
+                height: 30px;
+                margin: 0 5px;
+                font-size: 14px;
+            }
+
+            @media(max-width:575px) {
+                margin: 0 5px;
+                font-size: 14px;
+                min-width: 75px;     
+                width: 75px;
+                position: relative;
+                min-height: 38px;
+            }
+
+            &.Mui-selected {
+                background: $theme-primary-color;
+                outline: none;
+                box-shadow: none;
+                color: $white;
+            }
+        }
+    }
+
+    .MuiTabs-indicator {
+        display: none;
+    }
+
+    .MuiBox-root {
+        margin-top: 40px;
     }
 }
 

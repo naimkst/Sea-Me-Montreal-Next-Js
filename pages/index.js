@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactFlagsSelect from "react-flags-select";
 import ReactFullpage from '@fullpage/react-fullpage';
 import Image from 'next/image';
 import { Link } from 'react-scroll'
@@ -12,6 +13,12 @@ import Reserver from '../components/Reserver/Reserver';
 import GallerySection from '../components/Gallery/Gallery';
 import ContactArea from '../components/ContactArea';
 import Footer from '../components/footer/Footer';
+import MenuTabs from '../components/MenuTab/MenuTab';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 const ClickHandler = () => {
     window.scrollTo(10, 0);
@@ -21,9 +28,18 @@ const ClickHandler = () => {
 
 const Fullpage = (props) => {
     const [menuActive, setMenuState] = useState(false);
+    const [tabActive, setTabState] = useState(false);
 
     const moveSectionDown = (id) => {
         return fullpage_api.moveTo(id);
+    };
+
+    const [selected, setSelected] = useState("");
+
+    const [age, setAge] = React.useState('');
+
+    const handleChange = (event) => {
+        setAge(event.target.value);
     };
 
 
@@ -85,11 +101,23 @@ const Fullpage = (props) => {
                                 <div className="col-lg-3 col-md-2 col-2">
                                     <div className="header-right" id="home">
                                         <div className="language">
-                                            <select name="" id="">
-                                                <option value="">FR</option>
-                                                <option value="">EN</option>
-                                                <option value="">BN</option>
-                                            </select>
+
+                                            <FormControl>
+                                                <Select
+                                                    value={age}
+                                                    onChange={handleChange}
+                                                    displayEmpty
+                                                    inputProps={{ 'aria-label': 'Without label' }}
+                                                >
+                                                    <MenuItem value="">
+                                                        <span>FR</span>
+                                                    </MenuItem>
+                                                    <MenuItem value={2}>EN</MenuItem>
+                                                    <MenuItem value={1}>AB</MenuItem>
+                                                    <MenuItem value={3}>BN</MenuItem>
+                                                </Select>
+                                            </FormControl>
+
                                         </div>
                                         <div className="btn">
                                             <Link href='/' className='theme-btn'>Réserver</Link>
@@ -129,7 +157,11 @@ const Fullpage = (props) => {
                                         <div className="section-title-s2">
                                             <h2>MENU SEA-ME</h2>
                                             <div className="arrow-btn">
-                                                <Link href="/" onClick={() => fullpageApi.moveTo(3)}><i className='ti-angle-down'></i></Link>
+                                                <button onClick={() => setTabState(!tabActive)}><i
+                                                    className={`fi ${tabActive ? "ti-angle-up" : "fi ti-angle-down"}`}></i></button>
+                                            </div>
+                                            <div className={`menu-tabs ${tabActive ? "show" : ""}`}>
+                                                <MenuTabs />
                                             </div>
                                         </div>
                                     </div>

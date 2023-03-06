@@ -7,6 +7,7 @@
 	justify-content: center;
 	flex-direction: column;
 	z-index: 1;
+	background-size: cover;
 
 	@media(max-width:1500px) {
 		height: 700px;
@@ -58,7 +59,8 @@
 	}
 }
 
-.arrow-btn a{
+.arrow-btn a,
+.arrow-btn button{
 	display: block;
 	width: 53px;
 	height: 53px;
@@ -70,6 +72,7 @@
 	border-radius: 50%;
 	cursor: pointer;
 	font-size: 25px;
+	background: none;
 
 	&:hover{
 		background: $theme-primary-color;

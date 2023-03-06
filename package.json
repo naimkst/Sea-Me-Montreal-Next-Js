@@ -19,6 +19,7 @@
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-animated-css": "^1.2.1",
     "react-dom": "^18.2.0",
+    "react-flags-select": "^2.2.3",
     "react-fontawesome": "^1.7.1",
     "react-modal-video": "^2.0.0",
     "react-owl-carousel": "^2.3.1",

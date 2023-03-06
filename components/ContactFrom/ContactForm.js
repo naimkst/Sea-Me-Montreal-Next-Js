@@ -88,9 +88,6 @@ const ContactForm = () => {
                 <div className="col-md-5 order-md-1 order-2 col-12">
                     <div className="submit-area">
                         <button type="submit" className="theme-btn">Submit now</button>
-                        <div id="loader">
-                            <i className="ti-reload"></i>
-                        </div>
                     </div>
                 </div>
             </div>

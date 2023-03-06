@@ -281,18 +281,22 @@
 	position: relative;
 	align-items: center;
 
-	select {
-		background: none;
+	.MuiSelect-select{
 		color: $white;
 		border: 0;
+		padding: 10px;
+		padding-right: 30px;
 
-		&:focus {
-			outline: none;
+		&:hover{
+			border: 0;
 		}
+	}
+	fieldset{
+		border: 0;
+	}
 
-		option {
-			color: $dark-gray;
-		}
+	.MuiSvgIcon-root{
+		color: $white;
 	}
 }
 
