@@ -1,56 +1,28 @@
 import React, { useState } from "react";
-import ReactFlagsSelect from "react-flags-select";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Image from "next/image";
 import { Link } from "react-scroll";
 import Logo from "/public/images/logo.png";
 import NavLink from "next/link";
-import Hero from "../components/hero/hero";
-import About from "../components/about/about";
-import Menu from "../components/menu/menu";
-import Corporate from "../components/Corporate/Corporate";
-import Reserver from "../components/Reserver/Reserver";
-import GallerySection from "../components/Gallery/Gallery";
-import ContactArea from "../components/ContactArea";
-import Footer from "../components/footer/Footer";
-import MenuTabs from "../components/MenuTab/MenuTab";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormHelperText from "@mui/material/FormHelperText";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import useFetch from "../hooks/useFetch";
+import Hero from "../hero/hero";
+import About from "../about/about";
+import Menu from "../menu/menu";
+import Corporate from "../Corporate/Corporate";
+import Reserver from "../Reserver/Reserver";
+import GallerySection from "../Gallery/Gallery";
+import ContactArea from "../ContactArea";
+import Footer from "../footer/Footer";
 
 const ClickHandler = () => {
   window.scrollTo(10, 0);
 };
 
 const Fullpage = (props) => {
-  const [menuActive, setMenuState] = useState(false);
-  const [tabActive, setTabState] = useState(false);
+  const [menuActive, setMenuState] = useState < any > false;
 
   const moveSectionDown = (id) => {
     return fullpage_api.moveTo(id);
   };
-
-  const [selected, setSelected] = useState("");
-
-  const [age, setAge] = React.useState("");
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
-
-  const { loading, error, data } = useFetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/home-page?populate=deep`
-  );
-
-  const { loading:menuLoading, error:menuError, data:menuData } = useFetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/see-menus?populate=deep`
-  );
-  const SeeMeSection = data?.data?.attributes?.SeeMeSection;
-
-  console.log(data);
 
   return (
     <>
@@ -73,27 +45,42 @@ const Fullpage = (props) => {
                         </div>
                         <ul className="responsivemenu">
                           <li>
-                            <Link href="/" onClick={() => moveSectionDown(2)}>
+                            <Link
+                              href="/home"
+                              onClick={() => moveSectionDown(2)}
+                            >
                               À PROPOS
                             </Link>
                           </li>
                           <li>
-                            <Link href="/" onClick={() => moveSectionDown(3)}>
+                            <Link
+                              href="/home"
+                              onClick={() => moveSectionDown(3)}
+                            >
                               LOUNGE
                             </Link>
                           </li>
                           <li>
-                            <Link href="/" onClick={() => moveSectionDown(4)}>
+                            <Link
+                              href="/home"
+                              onClick={() => moveSectionDown(4)}
+                            >
                               CORPORATIF
                             </Link>
                           </li>
                           <li>
-                            <Link href="/" onClick={() => moveSectionDown(6)}>
+                            <Link
+                              href="/home"
+                              onClick={() => moveSectionDown(6)}
+                            >
                               GALERIE
                             </Link>
                           </li>
                           <li>
-                            <Link href="/" onClick={() => moveSectionDown(7)}>
+                            <Link
+                              href="/home"
+                              onClick={() => moveSectionDown(7)}
+                            >
                               CONTACT
                             </Link>
                           </li>
@@ -137,27 +124,27 @@ const Fullpage = (props) => {
                     </button>
                     <ul className="nav navbar-nav mb-2 mb-lg-0">
                       <li>
-                        <Link href="/" onClick={() => moveSectionDown(2)}>
+                        <Link href="/home" onClick={() => moveSectionDown(2)}>
                           À PROPOS
                         </Link>
                       </li>
                       <li>
-                        <Link href="/" onClick={() => moveSectionDown(3)}>
+                        <Link href="/home" onClick={() => moveSectionDown(3)}>
                           LOUNGE
                         </Link>
                       </li>
                       <li>
-                        <Link href="/" onClick={() => moveSectionDown(4)}>
+                        <Link href="/home" onClick={() => moveSectionDown(4)}>
                           CORPORATIF
                         </Link>
                       </li>
                       <li>
-                        <Link href="/" onClick={() => moveSectionDown(6)}>
+                        <Link href="/home" onClick={() => moveSectionDown(6)}>
                           GALERIE
                         </Link>
                       </li>
                       <li>
-                        <Link href="/" onClick={() => moveSectionDown(7)}>
+                        <Link href="/home" onClick={() => moveSectionDown(7)}>
                           CONTACT
                         </Link>
                       </li>
@@ -167,24 +154,14 @@ const Fullpage = (props) => {
                 <div className="col-lg-3 col-md-2 col-2">
                   <div className="header-right" id="home">
                     <div className="language">
-                      <FormControl>
-                        <Select
-                          value={age}
-                          onChange={handleChange}
-                          displayEmpty
-                          inputProps={{ "aria-label": "Without label" }}
-                        >
-                          <MenuItem value="">
-                            <span>FR</span>
-                          </MenuItem>
-                          <MenuItem value={2}>EN</MenuItem>
-                          <MenuItem value={1}>AB</MenuItem>
-                          <MenuItem value={3}>BN</MenuItem>
-                        </Select>
-                      </FormControl>
+                      <select name="" id="">
+                        <option value="">FR</option>
+                        <option value="">EN</option>
+                        <option value="">BN</option>
+                      </select>
                     </div>
                     <div className="btn">
-                      <Link href="/" className="theme-btn">
+                      <Link href="/home" className="theme-btn">
                         Réserver
                       </Link>
                     </div>
@@ -216,44 +193,40 @@ const Fullpage = (props) => {
             <>
               <ReactFullpage.Wrapper>
                 <div className="section hero-section">
-                  <Hero data={data} />
+                  <Hero />
                   <div className="arrow-btn">
-                    <Link href="/" onClick={() => fullpageApi.moveTo(2)}>
+                    <Link href="/home" onClick={() => fullpageApi?.moveTo(2)}>
                       <i className="ti-angle-down"></i>
                     </Link>
                   </div>
                 </div>
                 <div className="section">
-                  <About data={data} />
+                  <About />
                   <div className="see-menu">
                     <div className="section-title-s2">
-                      <h2>{SeeMeSection?.Title}</h2>
+                      <h2>MENU SEA-ME</h2>
                       <div className="arrow-btn">
-                        <button onClick={() => setTabState(!tabActive)}>
-                          <i
-                            className={`fi ${
-                              tabActive ? "ti-angle-up" : "fi ti-angle-down"
-                            }`}
-                          ></i>
-                        </button>
-                      </div>
-                      <div className={`menu-tabs ${tabActive ? "show" : ""}`}>
-                        <MenuTabs data={menuData} />
+                        <Link
+                          href="/home"
+                          onClick={() => fullpageApi.moveTo(3)}
+                        >
+                          <i className="ti-angle-down"></i>
+                        </Link>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="section">
-                  <Menu data={data} menuData={menuData} />
+                  <Menu />
                 </div>
                 <div className="section">
-                  <Corporate data={data} />
+                  <Corporate />
                 </div>
                 <div className="section">
-                  <Reserver data={data} />
+                  <Reserver />
                 </div>
                 <div className="section">
-                  <GallerySection data={data} />
+                  <GallerySection />
                 </div>
                 <div className="section">
                   <ContactArea />

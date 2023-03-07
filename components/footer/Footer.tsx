@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Logo from '/public/images/logo-2.png'
 import Image from 'next/image'
 
-const Footer = (props) => {
+const Footer = (props: any) => {
     return (
         <div className="site-footer text-center">
             <div className="container">

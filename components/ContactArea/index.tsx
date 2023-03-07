@@ -2,7 +2,7 @@ import React from 'react'
 import ContactForm from '../ContactFrom/ContactForm'
 
 
-const ContactArea = (props) => {
+const ContactArea = (props: any) => {
     return (
         <section className="contact-form-area section-padding">
             <div className="container">

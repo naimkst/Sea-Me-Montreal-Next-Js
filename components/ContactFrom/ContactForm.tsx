@@ -23,7 +23,7 @@ const ContactForm = () => {
         }
     };
 
-    const submitHandler = e => {
+    const submitHandler = (e: any) => {
         e.preventDefault();
         if (validator.allValid()) {
             validator.hideMessages();
@@ -77,7 +77,7 @@ const ContactForm = () => {
                             onBlur={(e) => changeHandler(e)}
                             onChange={(e) => changeHandler(e)}
                             value={forms.message}
-                            type="text"
+                            // type="text"
                             name="message"
                             className="form-control"
                             placeholder="MESSAGE">
