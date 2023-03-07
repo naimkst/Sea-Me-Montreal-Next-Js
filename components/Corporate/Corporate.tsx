@@ -23,7 +23,6 @@ const Corporate = ({ props, data }: any) => {
                   ? CorporateSection?.Image?.data?.attributes?.url
                   : ""
               }`}
-              alt=""
               width={
                 CorporateSection?.Image?.data?.attributes?.width
                   ? CorporateSection?.Image?.data?.attributes?.width

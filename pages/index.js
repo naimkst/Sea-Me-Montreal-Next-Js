@@ -44,13 +44,22 @@ const Fullpage = (props) => {
   const { loading, error, data } = useFetch(
     `${process.env.NEXT_PUBLIC_API_URL}/home-page?populate=deep`
   );
-
-  const { loading:menuLoading, error:menuError, data:menuData } = useFetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/see-menus?populate=deep`
+  const {
+    loading: settingsLoading,
+    error: settingsError,
+    data: settings,
+  } = useFetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/global-settiing?populate=deep`
   );
+
+  const {
+    loading: menuLoading,
+    error: menuError,
+    data: menuData,
+  } = useFetch(`${process.env.NEXT_PUBLIC_API_URL}/see-menus?populate=deep`);
   const SeeMeSection = data?.data?.attributes?.SeeMeSection;
 
-  console.log(data);
+  console.log(settings);
 
   return (
     <>
@@ -256,8 +265,8 @@ const Fullpage = (props) => {
                   <GallerySection data={data} />
                 </div>
                 <div className="section">
-                  <ContactArea />
-                  <Footer />
+                  <ContactArea data={data} settings={settings} />
+                  <Footer settings={settings} />
                 </div>
               </ReactFullpage.Wrapper>
             </>
