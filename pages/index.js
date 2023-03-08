@@ -65,9 +65,13 @@ const Fullpage = (props) => {
 
   const Global = settings?.data?.attributes?.Global;
 
-
   useEffect(() => {
-    setLanguage(lngData);
+    if (lngData) {
+      setLanguage(lngData);
+    } else {
+      localStorage.setItem("lan", JSON.stringify("en"));
+      setLanguage("en");
+    }
   }, [lngData]);
 
   return (
