@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactFlagsSelect from "react-flags-select";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Image from "next/image";
@@ -20,6 +20,7 @@ import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import useFetch from "../hooks/useFetch";
+import { getLocalStorageData } from "../helper/globalFunction";
 
 const ClickHandler = () => {
   window.scrollTo(10, 0);
@@ -28,38 +29,46 @@ const ClickHandler = () => {
 const Fullpage = (props) => {
   const [menuActive, setMenuState] = useState(false);
   const [tabActive, setTabState] = useState(false);
+  const [language, setLanguage] = React.useState("fr");
+
+  const lngData = getLocalStorageData("lan");
 
   const moveSectionDown = (id) => {
     return fullpage_api.moveTo(id);
   };
 
-  const [selected, setSelected] = useState("");
-
-  const [age, setAge] = React.useState("");
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
-
   const { loading, error, data } = useFetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/home-page?populate=deep`
+    `${process.env.NEXT_PUBLIC_API_URL}/home-page?populate=deep&locale=${lngData}`
   );
+
   const {
     loading: settingsLoading,
     error: settingsError,
     data: settings,
   } = useFetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/global-settiing?populate=deep`
+    `${process.env.NEXT_PUBLIC_API_URL}/global-settiing?populate=deep&locale=${lngData}`
   );
 
   const {
     loading: menuLoading,
     error: menuError,
     data: menuData,
-  } = useFetch(`${process.env.NEXT_PUBLIC_API_URL}/see-menus?populate=deep`);
+  } = useFetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/see-menus?populate=deep&locale=${lngData}`
+  );
   const SeeMeSection = data?.data?.attributes?.SeeMeSection;
 
-  console.log(settings);
+  const handleChange = (event) => {
+    setLanguage(event.target.value);
+    localStorage.setItem("lan", JSON.stringify(event.target.value));
+  };
+
+  const Global = settings?.data?.attributes?.Global;
+
+
+  useEffect(() => {
+    setLanguage(lngData);
+  }, [lngData]);
 
   return (
     <>
@@ -178,23 +187,24 @@ const Fullpage = (props) => {
                     <div className="language">
                       <FormControl>
                         <Select
-                          value={age}
+                          value={language}
                           onChange={handleChange}
                           displayEmpty
                           inputProps={{ "aria-label": "Without label" }}
                         >
-                          <MenuItem value="">
+                          <MenuItem value="fr">
                             <span>FR</span>
                           </MenuItem>
-                          <MenuItem value={2}>EN</MenuItem>
-                          <MenuItem value={1}>AB</MenuItem>
-                          <MenuItem value={3}>BN</MenuItem>
+                          <MenuItem value={"en"}>EN</MenuItem>
                         </Select>
                       </FormControl>
                     </div>
                     <div className="btn">
-                      <Link href="/" className="theme-btn">
-                        Réserver
+                      <Link
+                        href={String(Global?.ReserverButtonLink)}
+                        className="theme-btn"
+                      >
+                        {Global?.ReserverButtonText}
                       </Link>
                     </div>
                   </div>
