@@ -91,47 +91,92 @@ const Fullpage = (props) => {
                   <div className="mobail-menu">
                     <div>
                       <div className={`mobileMenu ${menuActive ? "show" : ""}`}>
-                        <div className="menu-close">
-                          <div
-                            className="clox"
-                            onClick={() => setMenuState(!menuActive)}
-                          >
-                            <i className="ti-close"></i>
+                        <OutsideClickHandler
+                          onOutsideClick={() => {
+                            setMenuState(false);
+                          }}
+                        >
+                          <div className="menu-close">
+                            <div
+                              className="clox"
+                              onClick={() => setMenuState(!menuActive)}
+                            >
+                              <i className="ti-close"></i>
+                            </div>
                           </div>
-                        </div>
-                        <ul className="responsivemenu">
-                          {/* <li>
+                          <ul className="responsivemenu">
+                            {/* <li>
                             <Link href="/" onClick={() => moveSectionDown(1)}>
                               {navigation?.Home}
                             </Link>
                           </li> */}
-                          <li>
-                            <Link href="/" onClick={() => moveSectionDown(2)}>
-                              {navigation?.AboutUs}
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/" onClick={() => moveSectionDown(3)}>
-                              {navigation?.Restaurant}
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/" onClick={() => moveSectionDown(4)}>
-                              {navigation?.Lounge}
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/" onClick={() => moveSectionDown(5)}>
-                              {navigation?.Corporate}
-                            </Link>
-                          </li>
+                            <li>
+                              <Link
+                                href="/"
+                                onClick={() => {
+                                  moveSectionDown(2);
+                                  setMenuState(!menuActive);
+                                }}
+                              >
+                                {navigation?.AboutUs}
+                              </Link>
+                            </li>
+                            <li>
+                              <Link
+                                href="/"
+                                onClick={() => {
+                                  moveSectionDown(3);
+                                  setMenuState(!menuActive);
+                                }}
+                              >
+                                {navigation?.Restaurant}
+                              </Link>
+                            </li>
+                            <li>
+                              <Link
+                                href="/"
+                                onClick={() => {
+                                  moveSectionDown(4);
+                                  setMenuState(!menuActive);
+                                }}
+                              >
+                                {navigation?.Lounge}
+                              </Link>
+                            </li>
+                            <li>
+                              <Link
+                                href="/"
+                                onClick={() => {
+                                  moveSectionDown(5);
+                                  setMenuState(!menuActive);
+                                }}
+                              >
+                                {navigation?.Corporate}
+                              </Link>
+                            </li>
 
-                          <li>
-                            <Link href="/" onClick={() => moveSectionDown(8)}>
-                              {navigation?.Contact}
+                            <li>
+                              <Link
+                                href="/"
+                                onClick={() => {
+                                  moveSectionDown(8);
+                                  setMenuState(!menuActive);
+                                }}
+                              >
+                                {navigation?.Contact}
+                              </Link>
+                            </li>
+                          </ul>
+                          <div className="btn">
+                            <Link
+                              onClick={() => linkTo(Global?.ReserverButtonLink)}
+                              href={String(Global?.ReserverButtonLink)}
+                              className="theme-btn"
+                            >
+                              {Global?.ReserverButtonText}
                             </Link>
-                          </li>
-                        </ul>
+                          </div>
+                        </OutsideClickHandler>
                       </div>
 
                       <div
