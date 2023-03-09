@@ -32,6 +32,7 @@ const Fullpage = (props) => {
   const [menuActive, setMenuState] = useState(false);
   const [tabActive, setTabState] = useState(false);
   const [language, setLanguage] = React.useState("fr");
+  const [showNav, setShowNav] = useState(false);
 
   const lngData = getLocalStorageData("lan");
 
@@ -80,6 +81,12 @@ const Fullpage = (props) => {
   const linkTo = (id) => {
     document.location = id;
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowNav(true);
+    }, 800);
+  }, [showNav]);
 
   return (
     <>
@@ -284,81 +291,83 @@ const Fullpage = (props) => {
         </div>
       </header>
 
-      <ReactFullpage
-        //fullpage options
-        licenseKey={"YOUR_KEY_HERE"}
-        scrollingSpeed={1000} /* Options here */
-        navigation
-        navigationTooltips={[
-          navigation?.Home,
-          navigation?.AboutUs,
-          navigation?.Restaurant,
-          navigation?.Lounge,
-          navigation?.Corporate,
-          navigation?.Contact,
-        ]}
-        showActiveTooltip={true}
-        render={({ fullpageApi }) => {
-          return (
-            <>
-              <ReactFullpage.Wrapper>
-                <div className="section hero-section">
-                  <Hero data={data} />
-                  <div className="arrow-btn">
-                    <Link href="/" onClick={() => fullpageApi.moveTo(2)}>
-                      <i className="ti-angle-down"></i>
-                    </Link>
+      {showNav && (
+        <ReactFullpage
+          //fullpage options
+          licenseKey={"YOUR_KEY_HERE"}
+          scrollingSpeed={500} /* Options here */
+          navigation
+          navigationTooltips={[
+            navigation?.Home,
+            navigation?.AboutUs,
+            navigation?.Restaurant,
+            navigation?.Lounge,
+            navigation?.Corporate,
+            navigation?.Contact,
+          ]}
+          showActiveTooltip={true}
+          render={({ fullpageApi }) => {
+            return (
+              <>
+                <ReactFullpage.Wrapper>
+                  <div className="section hero-section">
+                    <Hero data={data} />
+                    <div className="arrow-btn">
+                      <Link href="/" onClick={() => fullpageApi.moveTo(2)}>
+                        <i className="ti-angle-down"></i>
+                      </Link>
+                    </div>
                   </div>
-                </div>
-                <div className="section">
-                  <About data={data} />
-                </div>
-                <div className="section see-menu">
-                  <div className="">
-                    <div className="section-title-s2">
-                      <ReactMarkdown>{`${SeeMeSection?.Title}`}</ReactMarkdown>
-                      <div className="arrow-btn">
-                        <button onClick={() => setTabState(!tabActive)}>
-                          <i
-                            className={`fi ${
-                              tabActive ? "ti-angle-up" : "fi ti-angle-down"
-                            }`}
-                          ></i>
-                        </button>
-                      </div>
-                      <div className={`menu-tabs ${tabActive ? "show" : ""}`}>
-                        <OutsideClickHandler
-                          onOutsideClick={() => {
-                            setTabState(false);
-                          }}
-                        >
-                          <MenuTabs data={menuData} />
-                        </OutsideClickHandler>
+                  <div className="section">
+                    <About data={data} />
+                  </div>
+                  <div className="section see-menu">
+                    <div className="">
+                      <div className="section-title-s2">
+                        <ReactMarkdown>{`${SeeMeSection?.Title}`}</ReactMarkdown>
+                        <div className="arrow-btn">
+                          <button onClick={() => setTabState(!tabActive)}>
+                            <i
+                              className={`fi ${
+                                tabActive ? "ti-angle-up" : "fi ti-angle-down"
+                              }`}
+                            ></i>
+                          </button>
+                        </div>
+                        <div className={`menu-tabs ${tabActive ? "show" : ""}`}>
+                          <OutsideClickHandler
+                            onOutsideClick={() => {
+                              setTabState(false);
+                            }}
+                          >
+                            <MenuTabs data={menuData} />
+                          </OutsideClickHandler>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="section">
-                  <Menu data={data} menuData={menuData} />
-                </div>
-                <div className="section">
-                  <Corporate data={data} />
-                </div>
-                <div className="section">
-                  <Reserver data={data} />
-                </div>
-                <div className="section">
-                  <GallerySection data={data} setting={settings} />
-                </div>
-                <div className="section">
-                  <ContactArea data={data} settings={settings} />
-                  <Footer settings={settings} />
-                </div>
-              </ReactFullpage.Wrapper>
-            </>
-          );
-        }}
-      />
+                  <div className="section">
+                    <Menu data={data} menuData={menuData} />
+                  </div>
+                  <div className="section">
+                    <Corporate data={data} />
+                  </div>
+                  <div className="section">
+                    <Reserver data={data} />
+                  </div>
+                  <div className="section">
+                    <GallerySection data={data} setting={settings} />
+                  </div>
+                  <div className="section">
+                    <ContactArea data={data} settings={settings} />
+                    <Footer settings={settings} />
+                  </div>
+                </ReactFullpage.Wrapper>
+              </>
+            );
+          }}
+        />
+      )}
     </>
   );
 };
