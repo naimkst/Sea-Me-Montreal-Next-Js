@@ -1,29 +1,29 @@
 /* 1.1	Theme Reset Style */
 html {
-    font-size: $base-font-size + px;
+  font-size: $base-font-size + px;
 }
 
 :root {
-    scroll-behavior: unset;
+  scroll-behavior: unset;
 }
 
 body {
-    font-family: $base-font;
-    color: $body-color;
-    background-color: $body-bg-color;
-    font-size: 16px;
-    font-size: calc-rem-value(16);
-    overflow-x: hidden;
+  font-family: $base-font;
+  color: $body-color;
+  background-color: $body-bg-color;
+  font-size: 16px;
+  font-size: calc-rem-value(16);
+  overflow-x: hidden;
 
-    @include media-query(767px) {
-        font-size: 15px;
-    }
+  @include media-query(767px) {
+    font-size: 15px;
+  }
 }
 
 p {
-    font-size: 18px;
-    color: $body-color;
-    line-height: 1.5em;
+  font-size: 18px;
+  color: $body-color;
+  line-height: 1.5em;
 }
 
 h1,
@@ -32,128 +32,128 @@ h3,
 h4,
 h5,
 h6 {
-    color: $white;
-    font-family: $heading-font;
-    font-weight: 600;
+  color: $white;
+  font-family: $heading-font;
+  font-weight: 600;
 }
 
 ul {
-    padding-left: 0;
-    margin: 0;
-    list-style: none;
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
-    @include transition-time(0.2s);
+  text-decoration: none;
+  @include transition-time(0.2s);
 }
 
 a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .sr-only {
-    display: none !important;
-    opacity: 0;
-    visibility: hidden;
+  display: none !important;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .container {
-    @media(min-width:1600px) {
-        max-width: 1510px;
-    }
+  @media (min-width: 1600px) {
+    max-width: 1510px;
+  }
 }
 
 /* 1.2 Global Elements */
 .page-wrapper {
-    position: relative;
-    z-index: 99;
+  position: relative;
+  z-index: 99;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .wow {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .fi:before {
-    margin: 0;
+  margin: 0;
 }
 
 .section-padding {
-    padding: 120px 0px;
+  padding: 120px 0px;
 
-    @include media-query(1400px) {
-        padding: 100px 0px;
-    }
+  @include media-query(1400px) {
+    padding: 100px 0px;
+  }
 
-    @include media-query(991px) {
-        padding: 90px 0;
-    }
+  @include media-query(991px) {
+    padding: 90px 0;
+  }
 
-    @include media-query(767px) {
-        padding: 80px 0;
-    }
+  @include media-query(767px) {
+    padding: 80px 0;
+  }
 }
-
-
 
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
-    background: $white !important;
+  background: $white !important;
 }
 
 #fp-nav ul li a.active span,
 #fp-nav ul li:hover a.active span,
 .fp-slidesNav ul li a.active span,
 .fp-slidesNav ul li:hover a.active span {
-    background: $theme-primary-color !important;
+  background: $theme-primary-color !important;
 }
 
 .error-404-section {
-    text-align: center;
+  text-align: center;
 
-    .error-message {
-        margin-top: 70px;
-        padding: 0 200px;
+  .error-message {
+    margin-top: 70px;
+    padding: 0 200px;
 
-        @include media-query(991px) {
-            margin-top: 50px;
-            padding: 0 100px;
-        }
-
-        @include media-query(767px) {
-            padding: 0;
-        }
-
-        h3 {
-            font-size: 30px;
-            font-size: calc-rem-value(30);
-            margin: 0 0 0.8em;
-        }
-
-        p {
-            margin-bottom: 1.8em;
-        }
+    @include media-query(991px) {
+      margin-top: 50px;
+      padding: 0 100px;
     }
 
+    @include media-query(767px) {
+      padding: 0;
+    }
+
+    h3 {
+      font-size: 30px;
+      font-size: calc-rem-value(30);
+      margin: 0 0 0.8em;
+    }
+
+    p {
+      margin-bottom: 1.8em;
+    }
+  }
 }
 
 #fp-nav.fp-right {
-    @include media-query(767px) {
-        background: $dark-gray;
-        border-radius: 20px;
-        right: 5px!important;
-    }
-    @include media-query(575px) {
-        right: 0px!important;
-    }
+  @include media-query(767px) {
+    background: $dark-gray;
+    border-radius: 20px;
+    right: 5px !important;
+  }
+  @include media-query(575px) {
+    right: 0px !important;
+  }
+}
+
+#fp-nav ul li .fp-tooltip {
+  color: #f57f35 !important;
 }

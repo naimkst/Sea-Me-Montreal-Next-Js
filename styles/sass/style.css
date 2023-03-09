@@ -162,6 +162,10 @@ img {
   }
 }
 
+#fp-nav ul li .fp-tooltip {
+  color: #f57f35 !important;
+}
+
 .section-title,
 .section-title-s2,
 .section-title-s3 {
@@ -2005,7 +2009,7 @@ img {
 }
 @media (max-width: 470px) {
   .contact-form-area .contact-info .contact-info-top .contact-info-item + .contact-info-item {
-    margin-top: 20px;
+    margin-top: 0px;
   }
 }
 .contact-form-area .contact-info .contact-info-top .contact-info-item + .contact-info-item:before {
