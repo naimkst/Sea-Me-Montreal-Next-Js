@@ -9,6 +9,7 @@ import glImg4 from "/public/images/gallery/img-4.jpg";
 import glImg5 from "/public/images/gallery/img-5.jpg";
 import Image from "next/image";
 import Link from "next/link";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const Gallerys = [
   {
@@ -88,7 +89,7 @@ const GallerySection = ({ data, setting }: any) => {
     <section className="gallery-section section-padding">
       <div className="container">
         <div className="section-title">
-          <h2>{GallerySection?.Title}</h2>
+          <ReactMarkdown>{`${GallerySection?.Title}`}</ReactMarkdown>
         </div>
 
         <div className="gallery-wrap">
@@ -118,7 +119,7 @@ const GallerySection = ({ data, setting }: any) => {
           </Slider>
         </div>
         <div className="section-title-s3 instagram-title">
-          <h2 className="instagram-title">{InstagramSection?.Title}</h2>
+          <ReactMarkdown className="instagram-title">{`${InstagramSection?.Title}`}</ReactMarkdown>
         </div>
         <div className="instagram">
           <Link href={String(InstagramSection?.InstagramLink)}>

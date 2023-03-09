@@ -11,7 +11,7 @@ const Corporate = ({ props, data }: any) => {
         <div className="corporate-wrap">
           <div className="corporate-text">
             <div className="section-title">
-              <h2>{CorporateSection?.Title}</h2>
+              <ReactMarkdown>{`${CorporateSection?.Title}`}</ReactMarkdown>
             </div>
             <ReactMarkdown>{`${CorporateSection?.Description}`}</ReactMarkdown>
             <div className="corporate-btn">

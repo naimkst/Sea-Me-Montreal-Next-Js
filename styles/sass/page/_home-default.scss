@@ -383,6 +383,10 @@
       }
       .corporate-btn {
         padding-top: 30px;
+
+        @media (max-width: 767px) {
+          padding-bottom: 30px;
+        }
       }
     }
 

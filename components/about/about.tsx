@@ -11,7 +11,9 @@ const About = ({ props, data }: any) => {
         <div className="about-wrap">
           <div className="about-text">
             <div className="section-title">
-              <h2>{RegardsSection?.Title}</h2>
+              <h2>
+                <ReactMarkdown>{`${RegardsSection?.Title}`}</ReactMarkdown>
+              </h2>
             </div>
             <ReactMarkdown>{`${RegardsSection?.Description}`}</ReactMarkdown>
           </div>

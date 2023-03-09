@@ -22,6 +22,7 @@ import Select from "@mui/material/Select";
 import useFetch from "../hooks/useFetch";
 import { getLocalStorageData } from "../helper/globalFunction";
 import OutsideClickHandler from "react-outside-click-handler";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const ClickHandler = () => {
   window.scrollTo(10, 0);
@@ -315,7 +316,7 @@ const Fullpage = (props) => {
                 <div className="section see-menu">
                   <div className="">
                     <div className="section-title-s2">
-                      <h2>{SeeMeSection?.Title}</h2>
+                      <ReactMarkdown>{`${SeeMeSection?.Title}`}</ReactMarkdown>
                       <div className="arrow-btn">
                         <button onClick={() => setTabState(!tabActive)}>
                           <i

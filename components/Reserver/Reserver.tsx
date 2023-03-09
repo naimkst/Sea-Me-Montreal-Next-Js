@@ -10,7 +10,7 @@ const Reserver = ({ props, data }: any) => {
       <div className="container">
         <div className="reserver-wrap">
           <div className="section-title">
-            <h2>{ReservationSection?.Title}</h2>
+            <ReactMarkdown>{`${ReservationSection?.Title}`}</ReactMarkdown>
           </div>
           <div className="reserve-btn">
             <Link

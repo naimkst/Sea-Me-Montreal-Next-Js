@@ -1,4 +1,5 @@
 import React from "react";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import ContactForm from "../ContactFrom/ContactForm";
 
 const ContactArea = ({ props, data, settings }: any) => {
@@ -9,7 +10,7 @@ const ContactArea = ({ props, data, settings }: any) => {
       <div className="container">
         <div className="contact-form-wrap">
           <div className="section-title">
-            <h2>{ContactUs?.Title}</h2>
+            <ReactMarkdown>{`${ContactUs?.Title}`}</ReactMarkdown>
           </div>
           <div className="row">
             <div className="col-lg-6 col-12">

@@ -73,13 +73,13 @@ const Menu = ({ props, data, menuData }: any) => {
           </div>
           <div className="menu-text">
             <div className="section-title-s3">
-              <h2>{BelugaLounge?.BelugaTitle}</h2>
+              <ReactMarkdown>{`${BelugaLounge?.BelugaTitle}`}</ReactMarkdown>
             </div>
             <ReactMarkdown>{`${BelugaLounge?.BelugaDescription}`}</ReactMarkdown>
 
             <div className="menu-text-bottom">
               <div className="section-title">
-                <h2>{BelugaLounge?.MenuTitle}</h2>
+                <ReactMarkdown>{`${BelugaLounge?.MenuTitle}`}</ReactMarkdown>
               </div>
               <ReactMarkdown>{`${BelugaLounge?.MenuDescription}`}</ReactMarkdown>
 
