@@ -14,9 +14,12 @@ const Corporate = ({ props, data }: any) => {
               <h2>{CorporateSection?.Title}</h2>
             </div>
             <ReactMarkdown>{`${CorporateSection?.Description}`}</ReactMarkdown>
-            <div className=" corporate-btn">
-              <a href="https://www.opentable.ca/" className="theme-btn">
-                Reserve
+            <div className="corporate-btn">
+              <a
+                href={String(CorporateSection?.ButtonLink)}
+                className="theme-btn-s2"
+              >
+                {CorporateSection?.ButtonText}
               </a>
             </div>
           </div>

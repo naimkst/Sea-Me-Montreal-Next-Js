@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const Reserver = ({ props, data }: any) => {
   const ReservationSection = data?.data?.attributes?.ReservationSection;
@@ -18,6 +19,9 @@ const Reserver = ({ props, data }: any) => {
             >
               {ReservationSection?.ButtonText}
             </Link>
+          </div>
+          <div className="notediv">
+            <ReactMarkdown className="note">{`${ReservationSection?.Note}`}</ReactMarkdown>
           </div>
         </div>
       </div>

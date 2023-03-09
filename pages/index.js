@@ -21,6 +21,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import useFetch from "../hooks/useFetch";
 import { getLocalStorageData } from "../helper/globalFunction";
+import OutsideClickHandler from "react-outside-click-handler";
 
 const ClickHandler = () => {
   window.scrollTo(10, 0);
@@ -75,7 +76,9 @@ const Fullpage = (props) => {
     }
   }, [lngData]);
 
-  console.log(settings?.data?.attributes?.Navigation, "Global");
+  const linkTo = (id) => {
+    document.location = id;
+  };
 
   return (
     <>
@@ -97,11 +100,11 @@ const Fullpage = (props) => {
                           </div>
                         </div>
                         <ul className="responsivemenu">
-                          <li>
+                          {/* <li>
                             <Link href="/" onClick={() => moveSectionDown(1)}>
                               {navigation?.Home}
                             </Link>
-                          </li>
+                          </li> */}
                           <li>
                             <Link href="/" onClick={() => moveSectionDown(2)}>
                               {navigation?.AboutUs}
@@ -167,11 +170,11 @@ const Fullpage = (props) => {
                       <i className="ti-close"></i>
                     </button>
                     <ul className="nav navbar-nav mb-2 mb-lg-0">
-                      <li>
+                      {/* <li>
                         <Link href="/" onClick={() => moveSectionDown(1)}>
                           {navigation?.Home}
                         </Link>
-                      </li>
+                      </li> */}
                       <li>
                         <Link href="/" onClick={() => moveSectionDown(2)}>
                           {navigation?.AboutUs}
@@ -220,6 +223,7 @@ const Fullpage = (props) => {
                     </div>
                     <div className="btn">
                       <Link
+                        onClick={() => linkTo(Global?.ReserverButtonLink)}
                         href={String(Global?.ReserverButtonLink)}
                         className="theme-btn"
                       >
@@ -277,7 +281,13 @@ const Fullpage = (props) => {
                         </button>
                       </div>
                       <div className={`menu-tabs ${tabActive ? "show" : ""}`}>
-                        <MenuTabs data={menuData} />
+                        <OutsideClickHandler
+                          onOutsideClick={() => {
+                            setTabState(false);
+                          }}
+                        >
+                          <MenuTabs data={menuData} />
+                        </OutsideClickHandler>
                       </div>
                     </div>
                   </div>

@@ -6,6 +6,9 @@ import Logo from "/public/images/slider/logo.png";
 
 const Hero = ({ data }: any) => {
   const heroSection = data?.data?.attributes?.HeroSection;
+  const linkTo = (id: any) => {
+    document.location = id;
+  };
   return (
     <div className="container">
       <div className="row">
@@ -33,6 +36,7 @@ const Hero = ({ data }: any) => {
             </div>
             <div className="btns">
               <Link
+                onClick={() => linkTo(heroSection?.BookButtonLink)}
                 href={String(heroSection?.BookButtonLink)}
                 className="theme-btn"
               >
