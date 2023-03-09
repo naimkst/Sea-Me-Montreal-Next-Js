@@ -14,18 +14,18 @@ const ContactArea = ({ props, data, settings }: any) => {
           <div className="row">
             <div className="col-lg-6 col-12">
               <div className="contact-form">
-                <ContactForm />
+                <ContactForm Global={Global} />
               </div>
             </div>
             <div className="col-lg-6 col-12">
               <div className="contact-info">
                 <div className="contact-info-top">
                   <div className="contact-info-item">
-                    <p>Numéro de cellulaire:</p>
+                    <p>{Global?.NumberText}</p>
                     <span>{Global?.Phone}</span>
                   </div>
                   <div className="contact-info-item">
-                    <p>Courriel:</p>
+                    <p>{Global?.EmailText}</p>
                     <span>{Global?.Email}</span>
                   </div>
                 </div>
@@ -34,7 +34,7 @@ const ContactArea = ({ props, data, settings }: any) => {
                 </div>
 
                 <div className="contact-info-item">
-                  <p>Adresse:</p>
+                  <p>{Global?.AddressText}</p>
                   <span>{Global?.Address}</span>
                 </div>
               </div>

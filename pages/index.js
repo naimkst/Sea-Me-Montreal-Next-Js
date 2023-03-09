@@ -64,6 +64,7 @@ const Fullpage = (props) => {
   };
 
   const Global = settings?.data?.attributes?.Global;
+  const navigation = settings?.data?.attributes?.Navigation;
 
   useEffect(() => {
     if (lngData) {
@@ -73,6 +74,8 @@ const Fullpage = (props) => {
       setLanguage("en");
     }
   }, [lngData]);
+
+  console.log(settings?.data?.attributes?.Navigation, "Global");
 
   return (
     <>
@@ -95,28 +98,34 @@ const Fullpage = (props) => {
                         </div>
                         <ul className="responsivemenu">
                           <li>
+                            <Link href="/" onClick={() => moveSectionDown(1)}>
+                              {navigation?.Home}
+                            </Link>
+                          </li>
+                          <li>
                             <Link href="/" onClick={() => moveSectionDown(2)}>
-                              À PROPOS
+                              {navigation?.AboutUs}
                             </Link>
                           </li>
                           <li>
                             <Link href="/" onClick={() => moveSectionDown(3)}>
-                              LOUNGE
+                              {navigation?.Restaurant}
                             </Link>
                           </li>
                           <li>
                             <Link href="/" onClick={() => moveSectionDown(4)}>
-                              CORPORATIF
+                              {navigation?.Lounge}
                             </Link>
                           </li>
                           <li>
-                            <Link href="/" onClick={() => moveSectionDown(6)}>
-                              GALERIE
+                            <Link href="/" onClick={() => moveSectionDown(5)}>
+                              {navigation?.Corporate}
                             </Link>
                           </li>
+
                           <li>
-                            <Link href="/" onClick={() => moveSectionDown(7)}>
-                              CONTACT
+                            <Link href="/" onClick={() => moveSectionDown(8)}>
+                              {navigation?.Contact}
                             </Link>
                           </li>
                         </ul>
@@ -159,28 +168,34 @@ const Fullpage = (props) => {
                     </button>
                     <ul className="nav navbar-nav mb-2 mb-lg-0">
                       <li>
+                        <Link href="/" onClick={() => moveSectionDown(1)}>
+                          {navigation?.Home}
+                        </Link>
+                      </li>
+                      <li>
                         <Link href="/" onClick={() => moveSectionDown(2)}>
-                          À PROPOS
+                          {navigation?.AboutUs}
                         </Link>
                       </li>
                       <li>
                         <Link href="/" onClick={() => moveSectionDown(3)}>
-                          LOUNGE
+                          {navigation?.Restaurant}
                         </Link>
                       </li>
                       <li>
                         <Link href="/" onClick={() => moveSectionDown(4)}>
-                          CORPORATIF
+                          {navigation?.Lounge}
                         </Link>
                       </li>
                       <li>
-                        <Link href="/" onClick={() => moveSectionDown(6)}>
-                          GALERIE
+                        <Link href="/" onClick={() => moveSectionDown(5)}>
+                          {navigation?.Corporate}
                         </Link>
                       </li>
+
                       <li>
-                        <Link href="/" onClick={() => moveSectionDown(7)}>
-                          CONTACT
+                        <Link href="/" onClick={() => moveSectionDown(8)}>
+                          {navigation?.Contact}
                         </Link>
                       </li>
                     </ul>
@@ -225,13 +240,12 @@ const Fullpage = (props) => {
         scrollingSpeed={1000} /* Options here */
         navigation
         navigationTooltips={[
-          "HOME",
-          "À PROPOS",
-          "LOUNGE",
-          "CORPORATIF",
-          "RÉSERVATION",
-          "GALERIE",
-          "CONTACT",
+          navigation?.Home,
+          navigation?.AboutUs,
+          navigation?.Restaurant,
+          navigation?.Lounge,
+          navigation?.Corporate,
+          navigation?.Contact,
         ]}
         showActiveTooltip={true}
         render={({ fullpageApi }) => {
@@ -248,7 +262,9 @@ const Fullpage = (props) => {
                 </div>
                 <div className="section">
                   <About data={data} />
-                  <div className="see-menu">
+                </div>
+                <div className="section see-menu">
+                  <div className="">
                     <div className="section-title-s2">
                       <h2>{SeeMeSection?.Title}</h2>
                       <div className="arrow-btn">
@@ -276,7 +292,7 @@ const Fullpage = (props) => {
                   <Reserver data={data} />
                 </div>
                 <div className="section">
-                  <GallerySection data={data} />
+                  <GallerySection data={data} setting={settings} />
                 </div>
                 <div className="section">
                   <ContactArea data={data} settings={settings} />

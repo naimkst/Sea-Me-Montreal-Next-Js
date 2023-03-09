@@ -438,7 +438,6 @@
   .section-title-s3 {
     text-align: center;
     margin-top: 40px;
-
     h2 {
       color: $white;
 
@@ -446,6 +445,14 @@
         right: auto;
         left: 50%;
         transform: translateX(-50%);
+      }
+    }
+    .instagram-title {
+      &:before {
+        right: 0;
+        left: auto;
+        transform: inherit;
+        width: 255px;
       }
     }
   }

@@ -4,13 +4,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import glImg1 from "/public/images/menu-1.jpg";
 import Image from "next/image";
-import aImg1 from "/public/images/menu/img-1.jpg";
-import aImg2 from "/public/images/menu/img-2.jpg";
-import aImg3 from "/public/images/menu/img-3.jpg";
-import aImg4 from "/public/images/menu/img-4.jpg";
-import Link from "next/link";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 function TabPanel(props: any) {

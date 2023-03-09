@@ -57,7 +57,7 @@ const Fullpage = (props) => {
                               href="/home"
                               onClick={() => moveSectionDown(3)}
                             >
-                              LOUNGE
+                              RESTAURANT
                             </Link>
                           </li>
                           <li>
@@ -65,17 +65,18 @@ const Fullpage = (props) => {
                               href="/home"
                               onClick={() => moveSectionDown(4)}
                             >
-                              CORPORATIF
+                              LOUNGE
                             </Link>
                           </li>
                           <li>
                             <Link
                               href="/home"
-                              onClick={() => moveSectionDown(6)}
+                              onClick={() => moveSectionDown(5)}
                             >
-                              GALERIE
+                              CORPORATIF
                             </Link>
                           </li>
+
                           <li>
                             <Link
                               href="/home"
@@ -130,19 +131,20 @@ const Fullpage = (props) => {
                       </li>
                       <li>
                         <Link href="/home" onClick={() => moveSectionDown(3)}>
-                          LOUNGE
+                          RESTAURANT
                         </Link>
                       </li>
                       <li>
                         <Link href="/home" onClick={() => moveSectionDown(4)}>
-                          CORPORATIF
+                          LOUNGE
                         </Link>
                       </li>
                       <li>
-                        <Link href="/home" onClick={() => moveSectionDown(6)}>
-                          GALERIE
+                        <Link href="/home" onClick={() => moveSectionDown(5)}>
+                          CORPORATIF
                         </Link>
                       </li>
+
                       <li>
                         <Link href="/home" onClick={() => moveSectionDown(7)}>
                           CONTACT
@@ -155,9 +157,8 @@ const Fullpage = (props) => {
                   <div className="header-right" id="home">
                     <div className="language">
                       <select name="" id="">
-                        <option value="">FR</option>
-                        <option value="">EN</option>
-                        <option value="">BN</option>
+                        <option value="fr">FR</option>
+                        <option value="en">EN</option>
                       </select>
                     </div>
                     <div className="btn">
@@ -176,15 +177,13 @@ const Fullpage = (props) => {
       <ReactFullpage
         //fullpage options
         licenseKey={"YOUR_KEY_HERE"}
-        scrollingSpeed={1000} /* Options here */
+        scrollingSpeed={600} /* Options here */
         navigation
         navigationTooltips={[
           "HOME",
           "À PROPOS",
           "LOUNGE",
           "CORPORATIF",
-          "RÉSERVATION",
-          "GALERIE",
           "CONTACT",
         ]}
         showActiveTooltip={true}

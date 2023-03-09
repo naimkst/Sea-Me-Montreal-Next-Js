@@ -33,7 +33,7 @@ const Gallerys = [
   },
 ];
 
-const GallerySection = ({ data }: any) => {
+const GallerySection = ({ data, setting }: any) => {
   var settings = {
     dots: false,
     arrows: true,
@@ -82,6 +82,7 @@ const GallerySection = ({ data }: any) => {
 
   const GallerySection = data?.data?.attributes?.GallerySection;
   const InstagramSection = data?.data?.attributes?.InstagramSection;
+  const Global = setting?.data?.attributes?.Global;
 
   return (
     <section className="gallery-section section-padding">
@@ -116,12 +117,13 @@ const GallerySection = ({ data }: any) => {
             ))}
           </Slider>
         </div>
-        <div className="section-title-s3">
-          <h2>{InstagramSection?.Title}</h2>
+        <div className="section-title-s3 instagram-title">
+          <h2 className="instagram-title">{InstagramSection?.Title}</h2>
         </div>
         <div className="instagram">
           <Link href={String(InstagramSection?.InstagramLink)}>
-            <i className="ti-instagram"></i> <span> Follow us here </span>
+            <i className="ti-instagram"></i>{" "}
+            <span> {Global?.FollowUsHere} </span>
           </Link>
         </div>
       </div>

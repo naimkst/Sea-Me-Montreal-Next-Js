@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import cImg from "/public/images/corporate.jpg";
 
 const Corporate = ({ props, data }: any) => {
   const CorporateSection = data?.data?.attributes?.CorporateSection;
@@ -15,6 +14,11 @@ const Corporate = ({ props, data }: any) => {
               <h2>{CorporateSection?.Title}</h2>
             </div>
             <ReactMarkdown>{`${CorporateSection?.Description}`}</ReactMarkdown>
+            <div className=" corporate-btn">
+              <a href="https://www.opentable.ca/" className="theme-btn">
+                Reserve
+              </a>
+            </div>
           </div>
           <div className="corporate-img">
             <Image
