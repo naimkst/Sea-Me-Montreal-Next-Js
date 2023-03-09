@@ -85,7 +85,7 @@ const Fullpage = (props) => {
   useEffect(() => {
     setTimeout(() => {
       setShowNav(true);
-    }, 800);
+    }, 1000);
   }, [showNav]);
 
   return (
