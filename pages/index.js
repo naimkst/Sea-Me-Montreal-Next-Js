@@ -350,7 +350,10 @@ const Fullpage = (props) => {
                     <Menu data={data} menuData={menuData} />
                   </div>
                   <div className="section">
-                    <Corporate data={data} />
+                    <Corporate
+                      data={data}
+                      moveSectionDown={() => moveSectionDown(8)}
+                    />
                   </div>
                   <div className="section">
                     <Reserver data={data} />

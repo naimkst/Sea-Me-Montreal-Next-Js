@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
-const Corporate = ({ props, data }: any) => {
+const Corporate = ({ props, data, moveSectionDown }: any) => {
   const CorporateSection = data?.data?.attributes?.CorporateSection;
 
   return (
@@ -15,10 +15,7 @@ const Corporate = ({ props, data }: any) => {
             </div>
             <ReactMarkdown>{`${CorporateSection?.Description}`}</ReactMarkdown>
             <div className="corporate-btn">
-              <a
-                href={String(CorporateSection?.ButtonLink)}
-                className="theme-btn-s2"
-              >
+              <a onClick={moveSectionDown} href="#" className="theme-btn-s2">
                 {CorporateSection?.ButtonText}
               </a>
             </div>
