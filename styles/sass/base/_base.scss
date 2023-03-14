@@ -145,7 +145,8 @@ img {
 
 #fp-nav.fp-right {
   @include media-query(767px) {
-    background: $dark-gray;
+    // background: $dark-gray;
+    background: transparent;
     border-radius: 20px;
     right: 5px !important;
   }

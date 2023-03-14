@@ -12,6 +12,7 @@ import Reserver from "../Reserver/Reserver";
 import GallerySection from "../Gallery/Gallery";
 import ContactArea from "../ContactArea";
 import Footer from "../footer/Footer";
+import useFetch from "../../hooks/useFetch";
 
 const ClickHandler = () => {
   window.scrollTo(10, 0);
@@ -24,6 +25,15 @@ const Fullpage = (props) => {
     return fullpage_api.moveTo(id);
   };
 
+  const {
+    loading: settingsLoading,
+    error: settingsError,
+    data: settings,
+  } = useFetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/global-settiing?populate=deep&locale=${lngData}`
+  );
+
+  const Global = settings?.data?.attributes?.Global;
   return (
     <>
       <header id="header">
@@ -111,7 +121,16 @@ const Fullpage = (props) => {
                       className="navbar-brand"
                       href="/"
                     >
-                      <Image src={Logo} alt="" />
+                      <img
+                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${
+                          Global?.Logo?.data?.attributes?.url
+                            ? Global?.Logo?.data?.attributes?.url
+                            : ""
+                        }`}
+                        alt=""
+                        // width={1920}
+                        // height={1080}
+                      />
                     </NavLink>
                   </div>
                 </div>

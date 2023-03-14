@@ -680,6 +680,7 @@
   @include media-query(767px) {
     .navbar-header .navbar-brand {
       font-size: 24px;
+      margin: 0;
     }
 
     #navbar .navbar-nav {
@@ -1006,7 +1007,7 @@
 .fp-viewing-14,
 .fp-viewing-15 {
   .site-header {
-    background: $dark-gray;
+    background: #000000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.09);
 
     #navbar > ul > li > a {

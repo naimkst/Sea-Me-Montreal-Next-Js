@@ -210,7 +210,23 @@ const Fullpage = (props) => {
                       className="navbar-brand"
                       href="/"
                     >
-                      <Image src={Logo} alt="" />
+                      <img
+                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${
+                          Global?.Logo?.data?.attributes?.url
+                            ? Global?.Logo?.data?.attributes?.url
+                            : ""
+                        }`}
+                      />
+                      {/* <Image
+                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${
+                          Global?.Logo?.data?.attributes?.url
+                            ? Global?.Logo?.data?.attributes?.url
+                            : ""
+                        }`}
+                        alt=""
+                        width={1920}
+                        height={1080}
+                      /> */}
                     </NavLink>
                   </div>
                 </div>
