@@ -7,13 +7,14 @@ const VideoModal = ({ videoLink }: any) => {
   return (
     <>
       <ModalVideo
-        channel="custom"
+        channel="youtube"
         //@ts-ignore
         // autoplay
         controls="0"
+        showinfo="0"
         isOpen={isOpen}
         videoId={videoLink}
-        url={videoLink}
+        // url={videoLink}
         onClose={() => setOpen(false)}
       />
 
