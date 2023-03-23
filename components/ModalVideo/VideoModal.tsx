@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ModalVideo from "react-modal-video";
 
-const VideoModal = ({ videoLink }: any) => {
+const VideoModal = ({ videoLink, videoText }: any) => {
   const [isOpen, setOpen] = useState(false);
 
   return (
@@ -23,7 +23,7 @@ const VideoModal = ({ videoLink }: any) => {
           <li>
             <button className="btn-wrap" onClick={() => setOpen(true)}>
               <i className="fi flaticon-play-button" aria-hidden="true"></i>
-              Vidéo
+              {videoText}
             </button>
           </li>
         </ul>

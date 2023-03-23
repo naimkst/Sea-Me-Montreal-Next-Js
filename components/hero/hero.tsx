@@ -42,7 +42,10 @@ const Hero = ({ data }: any) => {
               >
                 {heroSection?.BookButtonText}
               </Link>
-              <VideoModal videoLink={heroSection?.YoutubeVideoId} />
+              <VideoModal
+                videoLink={heroSection?.YoutubeVideoId}
+                videoText={heroSection?.VideoButtonText}
+              />
             </div>
           </div>
         </div>
