@@ -1461,6 +1461,7 @@ img {
 }
 .about-section .about-wrap .about-text p {
   margin-bottom: 35px;
+  color: black;
 }
 @media (max-width: 1399px) {
   .about-section .about-wrap .about-text p {
@@ -1519,6 +1520,7 @@ img {
   line-height: 25px;
   text-transform: capitalize;
   outline: none;
+  font-family: "Rise of Kingdom", sans-serif;
 }
 @media (max-width: 991px) {
   .menu-tabs .menu-info .MuiTabs-flexContainer button {
@@ -1601,6 +1603,9 @@ img {
   width: 50%;
   margin-left: 30px;
   padding: 80px 65px 80px 100px;
+}
+.menu-section .menu-text p {
+  color: black;
 }
 @media (max-width: 1599px) {
   .menu-section .menu-text {
@@ -1698,6 +1703,7 @@ img {
   line-height: 25px;
   text-transform: capitalize;
   outline: none;
+  font-family: "Rise of Kingdom", sans-serif;
 }
 @media (max-width: 1399px) {
   .menu-section .MuiTabs-flexContainer button {
@@ -1766,6 +1772,9 @@ img {
 .corporate-section .corporate-wrap .corporate-text {
   flex-basis: 50%;
   padding: 20px 75px 20px 65px;
+}
+.corporate-section .corporate-wrap .corporate-text p {
+  color: black;
 }
 @media (max-width: 1399px) {
   .corporate-section .corporate-wrap .corporate-text {

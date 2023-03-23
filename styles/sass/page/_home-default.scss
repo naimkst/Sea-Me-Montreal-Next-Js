@@ -39,6 +39,7 @@
 
       p {
         margin-bottom: 35px;
+        color: black;
 
         @media (max-width: 1399px) {
           margin-bottom: 20px;
@@ -103,6 +104,7 @@
         line-height: 25px;
         text-transform: capitalize;
         outline: none;
+        font-family: $kingdom;
 
         @media (max-width: 991px) {
           width: 80px;
@@ -191,6 +193,10 @@
     width: 50%;
     margin-left: 30px;
     padding: 80px 65px 80px 100px;
+
+    p {
+      color: black;
+    }
 
     @media (max-width: 1599px) {
       padding: 60px 45px 60px 80px;
@@ -284,6 +290,7 @@
       line-height: 25px;
       text-transform: capitalize;
       outline: none;
+      font-family: $kingdom;
 
       @media (max-width: 1399px) {
         width: 140.67px;
@@ -352,6 +359,10 @@
     .corporate-text {
       flex-basis: 50%;
       padding: 20px 75px 20px 65px;
+
+      p {
+        color: black;
+      }
 
       @media (max-width: 1399px) {
         padding: 20px 60px 20px 45px;
