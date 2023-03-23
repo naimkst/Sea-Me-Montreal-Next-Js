@@ -282,6 +282,7 @@
     border: 0;
     padding: 10px;
     padding-right: 30px;
+    font-family: $kingdom;
 
     &:hover {
       border: 0;
@@ -361,7 +362,7 @@
         color: $white;
         font-weight: 500;
         position: relative;
-        font-family: $heading-font;
+        font-family: $kingdom;
         cursor: pointer;
 
         @media (max-width: 1870px) {
