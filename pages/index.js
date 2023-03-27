@@ -341,24 +341,27 @@ const Fullpage = (props) => {
                     <div className="">
                       <div className="section-title-s2">
                         <ReactMarkdown>{`${SeeMeSection?.Title}`}</ReactMarkdown>
-                        <div className="arrow-btn">
-                          <button onClick={() => setTabState(!tabActive)}>
-                            <i
-                              className={`fi ${
-                                tabActive ? "ti-angle-up" : "fi ti-angle-down"
-                              }`}
-                            ></i>
-                          </button>
-                        </div>
-                        <div className={`menu-tabs ${tabActive ? "show" : ""}`}>
-                          <OutsideClickHandler
-                            onOutsideClick={() => {
-                              setTabState(false);
-                            }}
+
+                        <OutsideClickHandler
+                          onOutsideClick={() => {
+                            setTabState(false);
+                          }}
+                        >
+                          <div className="arrow-btn">
+                            <button onClick={() => setTabState(!tabActive)}>
+                              <i
+                                className={`fi ${
+                                  tabActive ? "ti-angle-up" : "fi ti-angle-down"
+                                }`}
+                              ></i>
+                            </button>
+                          </div>
+                          <div
+                            className={`menu-tabs ${tabActive ? "show" : ""}`}
                           >
                             <MenuTabs data={menuData} />
-                          </OutsideClickHandler>
-                        </div>
+                          </div>
+                        </OutsideClickHandler>
                       </div>
                     </div>
                   </div>

@@ -16,6 +16,11 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             crossOrigin="anonymous"
           />
+          <link
+            href="https://fonts.cdnfonts.com/css/times-new-roman"
+            rel="stylesheet"
+            crossOrigin="anonymous"
+          />
         </Head>
         <body>
           <Main />

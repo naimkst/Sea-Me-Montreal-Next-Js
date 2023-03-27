@@ -7,6 +7,11 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "Times New Roman MT Std";
+  src: url("//db.onlinewebfonts.com/t/8012fedb00f6ae8cb44583492101a654.eot");
+  src: url("//db.onlinewebfonts.com/t/8012fedb00f6ae8cb44583492101a654.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/8012fedb00f6ae8cb44583492101a654.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/8012fedb00f6ae8cb44583492101a654.woff") format("woff"), url("//db.onlinewebfonts.com/t/8012fedb00f6ae8cb44583492101a654.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/8012fedb00f6ae8cb44583492101a654.svg#Times New Roman MT Std") format("svg");
+}
 /* 1.1	Theme Reset Style */
 html {
   font-size: 15px;
@@ -34,6 +39,7 @@ p {
   font-size: 18px;
   color: #919195;
   line-height: 1.5em;
+  font-family: "Times New Roman", sans-serif;
 }
 
 h1,
@@ -192,11 +198,11 @@ img {
   line-height: 51px;
   text-transform: uppercase;
   margin-bottom: 20px;
-  color: #000;
+  color: #000024;
   position: relative;
   z-index: 1;
   display: inline-block;
-  font-family: "Rise of Kingdom", sans-serif;
+  font-family: "Times New Roman MT Std", sans-serif;
 }
 @media (max-width: 991px) {
   .section-title h2,
@@ -271,7 +277,7 @@ img {
   cursor: pointer;
   border: 1px solid #fff;
   border-radius: 5px;
-  font-family: "Rise of Kingdom", sans-serif;
+  font-family: "Times New Roman MT Std", sans-serif;
 }
 .theme-btn:hover, .theme-btn:focus, .theme-btn:active,
 .theme-btn-s2:hover,
@@ -315,8 +321,8 @@ img {
 }
 
 .theme-btn-s2 {
-  color: #000;
-  border-color: #000;
+  color: #000024;
+  border-color: #000024;
 }
 .theme-btn-s2:after {
   border: 1px solid rgba(33, 28, 50, 0.2);
@@ -577,7 +583,7 @@ img {
   border: 0;
   padding: 10px;
   padding-right: 30px;
-  font-family: "Rise of Kingdom", sans-serif;
+  font-family: "Times New Roman MT Std", sans-serif;
 }
 .site-header .header-right .MuiSelect-select:hover {
   border: 0;
@@ -656,7 +662,7 @@ img {
     color: #fff;
     font-weight: 500;
     position: relative;
-    font-family: "Rise of Kingdom", sans-serif;
+    font-family: "Times New Roman MT Std", sans-serif;
     cursor: pointer;
   }
 }
@@ -864,7 +870,7 @@ img {
     z-index: 101;
   }
   .site-header #navbar ul a {
-    color: #000;
+    color: #000024;
   }
   .site-header #navbar ul a:hover,
   .site-header #navbar ul li.current a {
@@ -879,7 +885,7 @@ img {
     background-color: #fff;
     width: 40px;
     height: 40px;
-    color: #000;
+    color: #000024;
     border: 0;
     outline: none;
     position: absolute;
@@ -1342,7 +1348,7 @@ img {
   border: 0;
   display: flex;
   align-items: center;
-  font-family: "Rise of Kingdom", sans-serif;
+  font-family: "Times New Roman MT Std", sans-serif;
 }
 .hero-section .btns .btn-wrap:hover {
   color: #f57f34;
@@ -1461,7 +1467,8 @@ img {
 }
 .about-section .about-wrap .about-text p {
   margin-bottom: 35px;
-  color: black;
+  color: #000024;
+  font-family: "Times New Roman", sans-serif;
 }
 @media (max-width: 1399px) {
   .about-section .about-wrap .about-text p {
@@ -1485,10 +1492,19 @@ img {
 
 .see-menu {
   padding: 120px 0;
-  background: #000;
+  background: #000024;
 }
 .see-menu .arrow-btn {
   margin-top: 50px;
+}
+@media (max-width: 991px) {
+  .see-menu .fp-overflow {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
 }
 
 .menu-tabs {
@@ -1520,7 +1536,7 @@ img {
   line-height: 25px;
   text-transform: capitalize;
   outline: none;
-  font-family: "Rise of Kingdom", sans-serif;
+  font-family: "Times New Roman MT Std", sans-serif;
 }
 @media (max-width: 991px) {
   .menu-tabs .menu-info .MuiTabs-flexContainer button {
@@ -1605,7 +1621,8 @@ img {
   padding: 80px 65px 80px 100px;
 }
 .menu-section .menu-text p {
-  color: black;
+  color: #000024;
+  font-family: "Times New Roman", sans-serif;
 }
 @media (max-width: 1599px) {
   .menu-section .menu-text {
@@ -1690,8 +1707,8 @@ img {
   justify-content: flex-start;
 }
 .menu-section .MuiTabs-flexContainer button {
-  color: #000;
-  border: 1px solid #000;
+  color: #000024;
+  border: 1px solid #000024;
   width: 153.67px;
   height: 60px;
   border-radius: 5px;
@@ -1703,7 +1720,7 @@ img {
   line-height: 25px;
   text-transform: capitalize;
   outline: none;
-  font-family: "Rise of Kingdom", sans-serif;
+  font-family: "Times New Roman MT Std", sans-serif;
 }
 @media (max-width: 1399px) {
   .menu-section .MuiTabs-flexContainer button {
@@ -1774,7 +1791,8 @@ img {
   padding: 20px 75px 20px 65px;
 }
 .corporate-section .corporate-wrap .corporate-text p {
-  color: black;
+  color: #000024;
+  font-family: "Times New Roman", sans-serif;
 }
 @media (max-width: 1399px) {
   .corporate-section .corporate-wrap .corporate-text {
@@ -1850,7 +1868,7 @@ img {
 }
 
 .gallery-section {
-  background: #000;
+  background: #000024;
 }
 @media (min-width: 1400px) {
   .gallery-section .container {
@@ -1943,6 +1961,7 @@ img {
   text-align: center;
   text-decoration-line: underline;
   color: #ffffff;
+  font-family: "Times New Roman", sans-serif;
 }
 .gallery-section .instagram i {
   font-size: 30px;
@@ -1971,6 +1990,7 @@ img {
   margin-bottom: 15px;
   padding-left: 40px;
   position: relative;
+  font-family: "Times New Roman MT Std", sans-serif;
 }
 @media (max-width: 991px) {
   .contact-form-area .contact-form .form-group label {
@@ -2084,6 +2104,7 @@ img {
   font-size: 18px;
   line-height: 32px;
   color: rgba(255, 255, 255, 0.7);
+  font-family: "Times New Roman", sans-serif;
 }
 @media (max-width: 1399px) {
   .contact-form-area .contact-info .contact-info-item span {

@@ -39,7 +39,8 @@
 
       p {
         margin-bottom: 35px;
-        color: black;
+        color: $black;
+        font-family: $roman;
 
         @media (max-width: 1399px) {
           margin-bottom: 20px;
@@ -68,6 +69,15 @@
 
   .arrow-btn {
     margin-top: 50px;
+  }
+  @media (max-width: 991px) {
+    .fp-overflow {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      justify-items: center;
+      align-items: center;
+    }
   }
 }
 
@@ -195,7 +205,8 @@
     padding: 80px 65px 80px 100px;
 
     p {
-      color: black;
+      color: $black;
+      font-family: $roman;
     }
 
     @media (max-width: 1599px) {
@@ -361,7 +372,8 @@
       padding: 20px 75px 20px 65px;
 
       p {
-        color: black;
+        color: $black;
+        font-family: $roman;
       }
 
       @media (max-width: 1399px) {
@@ -552,6 +564,7 @@
       text-align: center;
       text-decoration-line: underline;
       color: #ffffff;
+      font-family: $roman;
     }
 
     i {
@@ -588,6 +601,7 @@
         margin-bottom: 15px;
         padding-left: 40px;
         position: relative;
+        font-family: $kingdom;
 
         @media (max-width: 991px) {
           font-size: 18px;
@@ -708,6 +722,7 @@
         font-size: 18px;
         line-height: 32px;
         color: rgba(255, 255, 255, 0.7);
+        font-family: $roman;
 
         @media (max-width: 1399px) {
           font-size: 15px;

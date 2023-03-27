@@ -9,11 +9,27 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Times New Roman MT Std";
+  src: url("//db.onlinewebfonts.com/t/8012fedb00f6ae8cb44583492101a654.eot");
+  src: url("//db.onlinewebfonts.com/t/8012fedb00f6ae8cb44583492101a654.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/8012fedb00f6ae8cb44583492101a654.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/8012fedb00f6ae8cb44583492101a654.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/8012fedb00f6ae8cb44583492101a654.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/8012fedb00f6ae8cb44583492101a654.svg#Times New Roman MT Std")
+      format("svg");
+}
+
 // fonts
 $base-font-size: 15;
 $base-font: "Inter", sans-serif;
 $heading-font: "Inter", sans-serif;
-$kingdom: "Rise of Kingdom", sans-serif;
+$kingdom: "Times New Roman MT Std", sans-serif;
+$roman: "Times New Roman", sans-serif;
 
 // color
 $dark-gray: #211c32;
@@ -21,7 +37,7 @@ $dark-gray2: #000e28;
 $body-color: #919195;
 $white: #fff;
 $light: #919195;
-$black: #000;
+$black: #000024;
 $small-black: #333;
 $cyan: #323232;
 
