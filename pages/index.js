@@ -348,6 +348,15 @@ const Fullpage = (props) => {
                           }}
                         >
                           <div className="arrow-btn">
+                            <Link
+                              href="/"
+                              onClick={() => fullpageApi.moveTo(2)}
+                            >
+                              <i className="ti-angle-down"></i>
+                            </Link>
+                          </div>
+
+                          <div className="arrow-btn">
                             <button onClick={() => setTabState(!tabActive)}>
                               <i
                                 className={`fi ${
