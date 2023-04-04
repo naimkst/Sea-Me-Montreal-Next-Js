@@ -24,7 +24,7 @@ html {
 body {
   font-family: "Inter", sans-serif;
   color: #919195;
-  background-color: #211c32;
+  background-color: #000024;
   font-size: 16px;
   font-size: 1.0666666667rem;
   overflow-x: hidden;
@@ -198,7 +198,7 @@ img {
   line-height: 51px;
   text-transform: uppercase;
   margin-bottom: 20px;
-  color: #000024;
+  color: #000000;
   position: relative;
   z-index: 1;
   display: inline-block;
@@ -321,8 +321,8 @@ img {
 }
 
 .theme-btn-s2 {
-  color: #000024;
-  border-color: #000024;
+  color: #000000;
+  border-color: #000000;
 }
 .theme-btn-s2:after {
   border: 1px solid rgba(33, 28, 50, 0.2);
@@ -870,7 +870,7 @@ img {
     z-index: 101;
   }
   .site-header #navbar ul a {
-    color: #000024;
+    color: #000000;
   }
   .site-header #navbar ul a:hover,
   .site-header #navbar ul li.current a {
@@ -885,7 +885,7 @@ img {
     background-color: #fff;
     width: 40px;
     height: 40px;
-    color: #000024;
+    color: #000000;
     border: 0;
     outline: none;
     position: absolute;
@@ -1467,7 +1467,7 @@ img {
 }
 .about-section .about-wrap .about-text p {
   margin-bottom: 35px;
-  color: #000024;
+  color: #000000;
   font-family: "Times New Roman", sans-serif;
 }
 @media (max-width: 1399px) {
@@ -1492,7 +1492,7 @@ img {
 
 .see-menu {
   padding: 120px 0;
-  background: #000024;
+  background: #000000;
 }
 .see-menu .arrow-btn {
   margin-top: 50px;
@@ -1611,7 +1611,6 @@ img {
 }
 .menu-section .menu-wrap .menu-img-wrap .menu-img-item img {
   width: 100%;
-  border-radius: 10px;
 }
 .menu-section .menu-text {
   background: #fff;
@@ -1621,7 +1620,7 @@ img {
   padding: 80px 65px 80px 100px;
 }
 .menu-section .menu-text p {
-  color: #000024;
+  color: #000000;
   font-family: "Times New Roman", sans-serif;
 }
 @media (max-width: 1599px) {
@@ -1707,8 +1706,8 @@ img {
   justify-content: flex-start;
 }
 .menu-section .MuiTabs-flexContainer button {
-  color: #000024;
-  border: 1px solid #000024;
+  color: #000000;
+  border: 1px solid #000000;
   width: 153.67px;
   height: 60px;
   border-radius: 5px;
@@ -1769,6 +1768,7 @@ img {
 /* corporate-section */
 .corporate-section {
   padding: 80px 0;
+  background-color: #000000;
 }
 @media (max-width: 767px) {
   .corporate-section {
@@ -1791,7 +1791,7 @@ img {
   padding: 20px 75px 20px 65px;
 }
 .corporate-section .corporate-wrap .corporate-text p {
-  color: #000024;
+  color: #000000;
   font-family: "Times New Roman", sans-serif;
 }
 @media (max-width: 1399px) {
@@ -1868,7 +1868,7 @@ img {
 }
 
 .gallery-section {
-  background: #000024;
+  background: #000000;
 }
 @media (min-width: 1400px) {
   .gallery-section .container {
