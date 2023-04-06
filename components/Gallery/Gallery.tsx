@@ -110,7 +110,7 @@ const GallerySection = ({ data, setting }: any) => {
                     height={
                       gallery?.attributes?.height
                         ? gallery?.attributes?.height
-                        : 100
+                        : 570
                     }
                   />
                 </div>
