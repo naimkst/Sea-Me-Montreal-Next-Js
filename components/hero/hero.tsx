@@ -11,6 +11,22 @@ const Hero = ({ data }: any) => {
   };
   return (
     <div className="container">
+      <style>
+        {`
+        .hero-section {
+                position: relative;
+                background: url('` +
+          process.env.NEXT_PUBLIC_API_BASE_URL +
+          heroSection?.Image?.data?.attributes?.url +
+          `') no-repeat center center;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                z-index: 1;
+                background-size: cover;
+            }
+        `}
+      </style>
       <div className="row">
         <div className="col col-xs-12">
           <div className="hero-section-text">
