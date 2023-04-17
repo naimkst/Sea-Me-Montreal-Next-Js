@@ -321,7 +321,7 @@ const Fullpage = (props) => {
             navigation?.Corporate,
             navigation?.Contact,
           ]}
-          showActiveTooltip={true}
+          showActiveTooltip={false}
           render={({ fullpageApi }) => {
             return (
               <>

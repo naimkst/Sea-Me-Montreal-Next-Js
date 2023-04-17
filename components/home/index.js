@@ -205,7 +205,7 @@ const Fullpage = (props) => {
           "CORPORATIF",
           "CONTACT",
         ]}
-        showActiveTooltip={true}
+        showActiveTooltip={false}
         render={({ fullpageApi }) => {
           return (
             <>

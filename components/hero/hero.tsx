@@ -18,7 +18,7 @@ const Hero = ({ data }: any) => {
                 background: url('` +
           process.env.NEXT_PUBLIC_API_BASE_URL +
           heroSection?.Image?.data?.attributes?.url +
-          `') no-repeat center center;
+          `') no-repeat center bottom;
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
